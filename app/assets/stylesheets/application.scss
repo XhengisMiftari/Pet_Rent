@@ -10,3 +10,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body {
+  background-image: url('logo1.png');
+  background-size: 80% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+  min-height: 100vh;
+}
