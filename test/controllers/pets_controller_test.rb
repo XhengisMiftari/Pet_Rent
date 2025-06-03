@@ -2,8 +2,13 @@ require "test_helper"
 
 class PetsControllerTest < ActionDispatch::IntegrationTest
 <<<<<<< HEAD
+<<<<<<< HEAD
   test "should get index" do
     get pets_index_url
+=======
+  test "should get show" do
+    get pets_show_url
+>>>>>>> dc6f7c6007e4d683702ab527e8785cbf82d77f92
 =======
   test "should get new" do
     get pets_new_url

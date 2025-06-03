@@ -1,7 +1,12 @@
 class PetsController < ApplicationController
   def index
     @pets = Pet.all
-  end 
+  end
+
+  def show
+    @pet = Pet.find(params[:id])
+  end
+  
   def new
     @pet = Pet.new
   end
@@ -16,7 +21,9 @@ class PetsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  private
+
+private
+
   def pet_params
     params.require(:pet).permit(:species, :name, :price, :location, :availability)
   end
