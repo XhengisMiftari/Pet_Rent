@@ -2,7 +2,9 @@
 <p>Find me in app/views/pets/show.html.erb</p>
 
 <ul>
-  <% @pets.each do |pet| %>
-    <li><%= pet.name %></li>
-  <% end %>
+  <li><%= @pet.name %></li>
+  <li><%= @pet.species %></li>
+  <li><%= @pet.price %></li>
+  <li><%= @pet.location %></li>
+  <li><%= @pet.availability ? "Available" : "Not Available" %></li>
 </ul>
