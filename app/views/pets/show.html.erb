@@ -1,10 +1,18 @@
-<h1>Pets#show</h1>
-<p>Find me in app/views/pets/show.html.erb</p>
+<h1 class="text-start mb-1">Pet Details</h1>
 
-<ul>
-  <li><%= @pet.name %></li>
-  <li><%= @pet.species %></li>
-  <li><%= @pet.price %></li>
-  <li><%= @pet.location %></li>
-  <li><%= @pet.availability ? "Available" : "Not Available" %></li>
-</ul>
+<div class="card" style="max-width: 400px; margin-left: 2rem;">
+  <div class="card-header text-center bg-primary text-white">
+    <h2><%= @pet.name %></h2>
+    <small class="text-light">Rent me please ☺</small>
+  </div>
+
+  <div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item"><strong>Name: </strong><%= @pet.name %></li>
+      <li class="list-group-item"><strong>Species: </strong><%= @pet.species %></li>
+      <li class="list-group-item"><strong>Price: </strong>$<%= @pet.price %></li>
+      <li class="list-group-item"><strong>Location: </strong><%= @pet.location %></li>
+      <li class="list-group-item"><strong>Status: </strong><%= @pet.availability ? "Available" : "Not Available" %></li>
+    </ul>
+  </div>
+</div>
