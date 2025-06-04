@@ -2,6 +2,9 @@ class ReservationsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_pet
   before_action :ensure_pet_available, only: [:new, :create]
+  def show
+    @reservation = Reservation.find(params[:id])
+  end
 
   def new
     @reservation = Reservation.new
