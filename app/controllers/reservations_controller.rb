@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_pet, only: [:new, :create]
+  before_action :set_pet, only: [:new, :create, :show]
   before_action :ensure_pet_available, only: [:new, :create]
   def show
     @reservation = Reservation.find(params[:id])
@@ -20,10 +20,11 @@ def create
   @reservation.pet = @pet
   @reservation.user = current_user
 
-  if @reservation.save
-    redirect_to reservation_path(@reservation), notice: "Reservation created!"
-  else
-    render :new, status: :unprocessable_entity
+    if @reservation.save
+      redirect_to reservations_path, notice: "Rented your buddy!"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 end
 
