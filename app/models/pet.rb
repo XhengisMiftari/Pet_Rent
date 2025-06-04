@@ -1,4 +1,4 @@
 class Pet < ApplicationRecord
-  belongs_to :user
-  validates :image_url, presence: true
+   has_one_attached :photo
+   belongs_to :user
 end

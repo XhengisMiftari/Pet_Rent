@@ -6,7 +6,7 @@ class PetsController < ApplicationController
   def show
     @pet = Pet.find(params[:id])
   end
-  
+
   def new
     @pet = Pet.new
   end
@@ -25,6 +25,6 @@ class PetsController < ApplicationController
 private
 
   def pet_params
-    params.require(:pet).permit(:species, :name, :price, :location, :availability)
+    params.require(:pet).permit(:species, :name, :price, :location, :availability, :photo)
   end
 end
