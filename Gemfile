@@ -45,11 +45,13 @@ gem "bootsnap", require: false
 #gem devise
 gem "devise"
 
-
+# Cloudinary
+gem "cloudinary"
+gem "activestorage-cloudinary-service"
 # faker
 gem 'faker'
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 gem "bootstrap", "~> 5.2"
 gem "autoprefixer-rails"
