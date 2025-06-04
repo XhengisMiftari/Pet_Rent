@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'reservations/new'
+  get 'reservations/create'
   root to: 'pets#index'
   devise_for :users
   #root to: "pages#home"
@@ -11,5 +13,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :pets, only: [:new, :create, :show, :index]
+  resources :pets, only: [:new, :create, :show, :index] do
+    resources :reservations, only: [:new, :create]
+  end
 end
