@@ -20,3 +20,8 @@ body {
   background-color: #fff;
   min-height: 100vh;
 }
+
+.rounded-circle {
+  border-radius: 50%;
+  object-fit: cover;
+}
