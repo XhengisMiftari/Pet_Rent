@@ -28,6 +28,19 @@ body {
   object-fit: cover;
 }
 
+h1 {
+  text-shadow: 2px 2px 5px #292929;
+  font-weight: bold;
+}
+
+.form-label, .form-check-label {
+  font-weight: bold;
+  color: #3B3B1A;
+  letter-spacing: 1px;
+  margin-bottom: 0.3em;
+  margin-left: 0.3em;
+}
+
 .circle-map {
   border-radius: 50%;
   overflow: hidden;
