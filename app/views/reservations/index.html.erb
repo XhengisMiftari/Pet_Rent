@@ -9,15 +9,14 @@
             <%= reservation.pet.name %>
           </h5>
           <p class="card-text">
-            <strong>From:</strong> <%= reservation.start_date.strftime("%-d. %B %Y") %><br>
-            <strong>To:</strong> <%= reservation.end_date.strftime("%-d. %B %Y") %><br>
             <strong>Price:</strong> $<%= reservation.pet.price %><br>
-            <strong>Status:</strong> <%= reservation.pet.availability ? "Available" : "Not Available" %>
+            <strong>From:</strong> <%= reservation.start_date.strftime("%-d. %B %Y") %><br>
+            <strong>Until:</strong> <%= reservation.end_date.strftime("%-d. %B %Y") %><br>
           </p>
         </div>
         <% end %>
       </div>
     <% end %>
-<div>
+  </div>
   <%= link_to "Back to all pets", pets_path, class: "button mt-3" %>
 </div>
