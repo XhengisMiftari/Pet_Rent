@@ -10,12 +10,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-<<<<<<< HEAD
 @import "components/footer";
 
-=======
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
->>>>>>> master
 
 body {
   background-image: url('logo1.png');
@@ -30,9 +27,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
 }
-<<<<<<< HEAD
 
-=======
 .circle-map {
   border-radius: 50%;
   overflow: hidden;
@@ -45,4 +40,3 @@ body {
   box-shadow: none;
   background-color: transparent;
 }
->>>>>>> master
