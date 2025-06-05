@@ -14,17 +14,19 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
   end
 
-  def create
-    @reservation = Reservation.new(reservation_params)
-    @reservation.user = current_user
-    @reservation.pet = @pet
+def create
+  @pet = Pet.find(params[:pet_id])
+  @reservation = Reservation.new(reservation_params)
+  @reservation.pet = @pet
+  @reservation.user = current_user
 
     if @reservation.save
       redirect_to pet_reservation_path(@pet, @reservation), notice: "Rented your buddy!"
     else
       render :new, status: :unprocessable_entity
     end
-  end
+end
+
 
   def destroy
     @reservation = Reservation.find(params[:id])

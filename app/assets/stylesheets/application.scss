@@ -10,6 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/footer";
+
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 
 body {
@@ -25,6 +27,7 @@ body {
   border-radius: 50%;
   object-fit: cover;
 }
+
 .circle-map {
   border-radius: 50%;
   overflow: hidden;
