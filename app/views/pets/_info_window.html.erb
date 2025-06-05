@@ -1,0 +1,9 @@
+<div style="text-align:center;">
+  <% if pet.photo.attached? %>
+    <%= image_tag pet.photo, style: "width: 120px; height: 120px; object-fit: cover; border-radius: 8px;" %>
+  <% else %>
+    <%= image_tag "placeholder.png", style: "width: 120px; height: 120px; object-fit: cover; border-radius: 8px;" %>
+  <% end %>
+  <div><strong><%= pet.name %></strong></div>
+  <div><%= pet.species %></div>
+</div>

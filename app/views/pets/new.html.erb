@@ -7,7 +7,13 @@
         <%= f.input :name, input_html: { class: "form-control" } %>
         <%= f.input :species, input_html: { class: "form-control" } %>
         <%= f.input :price, input_html: { class: "form-control" } %>
-        <%= f.input :location, input_html: { class: "form-control" } %>
+        <%# Visible autocomplete input %>
+        <%= f.input :location,
+          label: "Location",
+          input_html: { data: { location_autocomplete_target: "location" }, class: "form-control" },
+          wrapper_html: { data: { controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } }
+        %>
+
         <%= f.input :availability, input_html: { class: "form-control" } %>
         <%= f.input :photo, as: :file, input_html: { class: "form-control" } %>
       </div>
