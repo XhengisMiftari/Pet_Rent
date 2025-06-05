@@ -11,10 +11,11 @@
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><strong>Pet: </strong><%= @reservation.pet.name %></li>
         <li class="list-group-item"><strong>Price: </strong>$<%= @reservation.pet.price %></li>
-        <li class="list-group-item"><strong>Start: </strong><%= @reservation.start_date %></li>
-        <li class="list-group-item"><strong>End: </strong><%= @reservation.end_date %></li>
+        <li class="list-group-item"><strong>Start: </strong><%= @reservation.start_date.strftime("%-d. %B %Y") %></li>
+        <li class="list-group-item"><strong>End: </strong><%= @reservation.end_date.strftime("%-d. %B %Y") %></li>
       </ul>
     </div>
+    <%= link_to "Remove Reservation", pet_reservation_path(@reservation.pet, @reservation), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
     <%= link_to "All Reservations", reservations_path, class: "btn btn-secondary mt-2" %>
   </div>
 </div>
