@@ -4,13 +4,19 @@
     <%= simple_form_for @pet, html: { class: "card p-4 shadow rounded-5 w-75 mx-auto", style: "background-color: #AEC8A4", multipart: true } do |f| %>
       <div class="form-inputs">
         <%= f.input :name, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
-        <%= f.input :species, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
+        <%= f.input :species,
+          as: :select,
+          collection: ["dog", "cat", "wolf", "lion", "tiger", "bear", "elephant", "monkey", "parrot", "t-rex", "cow"],
+          prompt: "Select species",
+          input_html: { class: "form-control", style: "background-color: #E7EFC7" }
+        %>
         <%= f.input :price, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
+
 
         <%# Visible autocomplete input %>
         <%= f.input :location,
           label: "Location",
-          input_html: { data: { location_autocomplete_target: "location" }, class: "form-control", style: "background-color: #E7EFC7" },
+          input_html: { data: { location_autocomplete_target: "location", class: "d-none"},  class: "form-control d-none", style: "background-color: #E7EFC7" },
           wrapper_html: { data: { controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } }
         %>
 
