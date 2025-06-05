@@ -1,12 +1,12 @@
 <div class="container my-4 ">
   <h1>My Reservations</h1>
-
+  <div class="row g-6">
     <% @reservations.each do |reservation| %>
-      <div class="card mb-3">
+      <div class="col-md-3">
         <%= link_to pet_reservation_path(reservation.pet, reservation), class: "text-decoration-none" do %>
-        <div class="card-body">
-          <h5 class="card-title">
-            Pet: <%= reservation.pet.name %>
+        <div class="card text-black shadow m-2 p-3 rounded-3" style="background-color: #E7EFC7; color: #3B3B1A;">
+          <h5 class="card-title" style="color: #3B3B1A; font-weight: bold">
+            <%= reservation.pet.name %>
           </h5>
           <p class="card-text">
             <strong>From:</strong> <%= reservation.start_date.strftime("%-d. %B %Y") %><br>
@@ -18,6 +18,6 @@
         <% end %>
       </div>
     <% end %>
-
+  </div>
   <%= link_to "Back to all pets", pets_path, class: "btn btn-secondary mt-3" %>
 </div>
