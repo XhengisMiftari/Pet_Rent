@@ -19,13 +19,26 @@ body {
   background-size: 80% auto;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #fff;
+  background-color: #E7EFC7;
   min-height: 100vh;
 }
 
 .rounded-circle {
   border-radius: 50%;
   object-fit: cover;
+}
+
+h1 {
+  text-shadow: 2px 2px 5px #292929;
+  font-weight: bold;
+}
+
+.form-label, .form-check-label {
+  font-weight: bold;
+  color: #3B3B1A;
+  letter-spacing: 1px;
+  margin-bottom: 0.3em;
+  margin-left: 0.3em;
 }
 
 .circle-map {

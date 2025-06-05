@@ -1,26 +1,26 @@
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
   <div class="col-md-6">
-    <h2 class="text-center mb-4">Add a New Pet</h2>
-
-    <%= simple_form_for @pet, html: { class: "card p-4 shadow", multipart: true } do |f| %>
+    <h1 class="text-center mb-4">Add a New Pet</h1>
+    <%= simple_form_for @pet, html: { class: "card p-4 shadow rounded-5 w-75 mx-auto", style: "background-color: #AEC8A4", multipart: true } do |f| %>
       <div class="form-inputs">
-        <%= f.input :name, input_html: { class: "form-control" } %>
-        <%= f.input :species, input_html: { class: "form-control" } %>
-        <%= f.input :price, input_html: { class: "form-control" } %>
+        <%= f.input :name, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
+        <%= f.input :species, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
+        <%= f.input :price, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
+
         <%# Visible autocomplete input %>
         <%= f.input :location,
           label: "Location",
-          input_html: { data: { location_autocomplete_target: "location" }, class: "form-control" },
+          input_html: { data: { location_autocomplete_target: "location" }, class: "form-control", style: "background-color: #E7EFC7" },
           wrapper_html: { data: { controller: "location-autocomplete", location_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"] } }
         %>
 
-        <%= f.input :availability, input_html: { class: "form-control" } %>
-        <%= f.input :photo, as: :file, input_html: { class: "form-control" } %>
+        <%= f.input :availability, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
+        <%= f.input :photo, as: :file, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
       </div>
       <div class="form-actions text-center mt-3">
-        <%= f.button :submit, "Birth a new Pet", class: "btn btn-primary px-5" %>
+        <%= f.button :submit, "Birth a new Pet", class: "button px-5" %>
       </div>
     <% end %>
-    <%= link_to "All Reservations", reservations_path, class: "btn btn-secondary mt-2" %>
+    <%= link_to "Reservations", reservations_path, class: "button" %>
   </div>
 </div>
