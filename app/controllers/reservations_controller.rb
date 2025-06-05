@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_pet, only: [:new, :create, :show]
+  before_action :set_pet, only: [:new, :create, :show, :destroy]
   before_action :ensure_pet_available, only: [:new, :create]
   def show
     @reservation = Reservation.find(params[:id])
@@ -27,6 +27,12 @@ def create
     end
 end
 
+
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to reservations_path, notice: "Reservation has been removed"
+  end
 
   private
 
