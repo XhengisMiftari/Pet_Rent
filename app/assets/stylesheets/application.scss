@@ -10,6 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/footer";
+
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 
 body {
@@ -17,7 +19,7 @@ body {
   background-size: 80% auto;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #fff;
+  background-color: #E7EFC7;
   min-height: 100vh;
 }
 
