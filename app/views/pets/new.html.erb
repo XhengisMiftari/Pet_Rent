@@ -5,7 +5,12 @@
     <%= simple_form_for @pet, html: { class: "card p-4 shadow", multipart: true } do |f| %>
       <div class="form-inputs">
         <%= f.input :name, input_html: { class: "form-control" } %>
-        <%= f.input :species, input_html: { class: "form-control" } %>
+        <%= f.input :species,
+          as: :select,
+          collection: ["dog", "cat", "wolf", "lion", "tiger", "bear", "elephant", "monkey", "parrot", "t-rex", "cow"],
+          prompt: "Select species",
+          input_html: { class: "form-control" }
+        %>
         <%= f.input :price, input_html: { class: "form-control" } %>
         <%# Visible autocomplete input %>
         <%= f.input :location,
