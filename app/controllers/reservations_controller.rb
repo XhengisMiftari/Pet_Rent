@@ -20,7 +20,7 @@ class ReservationsController < ApplicationController
     @reservation.pet = @pet
 
     if @reservation.save
-      redirect_to reservations_path, notice: "Rented your buddy!"
+      redirect_to pet_reservation_path(@pet, @reservation), notice: "Rented your buddy!"
     else
       render :new, status: :unprocessable_entity
     end
