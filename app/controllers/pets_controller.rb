@@ -5,6 +5,7 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @markers = [{lat: @pet.latitude, lng: @pet.longitude, info_window_html: render_to_string(partial: "info_window", locals: { pet: @pet })}] if @pet.geocoded?
   end
 
   def new
