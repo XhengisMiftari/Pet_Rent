@@ -1,6 +1,6 @@
 <div class="container my-4 " style="min-height: 100vh;">
   <h1>My Reservations</h1>
-  <div class="row g-6">
+  <div class="row g-6 ">
     <% @reservations.each do |reservation| %>
       <div class="col-md-3">
         <%= link_to pet_reservation_path(reservation.pet, reservation), class: "text-decoration-none" do %>
