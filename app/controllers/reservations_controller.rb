@@ -32,6 +32,7 @@ end
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
+    @pet.update(availability: true)
     redirect_to reservations_path, notice: "Reservation has been removed"
   end
 
