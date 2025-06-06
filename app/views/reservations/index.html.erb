@@ -5,6 +5,11 @@
       <div class="col-md-3">
         <%= link_to pet_reservation_path(reservation.pet, reservation), class: "text-decoration-none" do %>
         <div class="card text-black shadow m-2 p-3 rounded-3" style="background-color: #E7EFC7; color: #3B3B1A;">
+        <% if reservation.pet.photo.attached? %>
+  <div class="text-center mt-3">
+    <%= image_tag url_for(reservation.pet.photo), class: "rounded-circle", alt: reservation.pet.name, style: "width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" %>
+  </div>
+<% end %>
           <h5 class="card-title" style="color: #3B3B1A; font-weight: bold">
             <%= reservation.pet.name %>
           </h5>
