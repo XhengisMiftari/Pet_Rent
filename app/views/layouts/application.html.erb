@@ -11,7 +11,7 @@
 
   </head>
 
-  <body>
+  <body style="<%="background-image: url(#{image_path 'jugnle.png'});" unless current_page?(pets_path) || current_page?(root_path)%>">
     <%= render "shared/navbar" %>
     <%= yield %>
     <p class="notice"><%= notice %></p>
