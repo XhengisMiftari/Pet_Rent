@@ -1,0 +1,50 @@
+<div class="container d-flex flex-column flex-lg-row justify-content-center align-items-start gap-4" style="min-height: 100vh;">
+  <div>
+    <div class="card pet-card animate__animated animate__pulse">
+      <div class="card-header text-center bg-primary text-white">
+        <h1>Edit <%= @pet.name %></h1>
+        <small class="text-light">Update your pet listing</small>
+      </div>
+      <div class="card-body card-body-show text-center">
+        <%= simple_form_for @pet, html: { multipart: true } do |f| %>
+          <ul class="list-group list-group-flush mb-3 text-start">
+            <li class="list-group-item">
+              <%= f.input :name, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
+            </li>
+            <li class="list-group-item">
+              <%= f.input :species,
+                as: :select,
+                collection: ["dog", "cat", "wolf", "lion", "tiger", "bear", "elephant", "monkey", "parrot", "t-rex", "cow"],
+                prompt: "Select species",
+                input_html: { class: "form-control", style: "background-color: #E7EFC7" }
+              %>
+            </li>
+            <li class="list-group-item">
+              <%= f.input :price, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
+            </li>
+            <li class="list-group-item">
+              <%= f.input :location, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
+            </li>
+            <li class="list-group-item">
+              <strong>Status:</strong>
+              <%= f.input :availability, as: :boolean, label: "Available", input_html: { class: "form-check-input ms-2", style: "background-color: #E7EFC7" } %>
+            </li>
+            <li class="list-group-item">
+              <%= f.input :photo, as: :file, input_html: { class: "form-control", style: "background-color: #E7EFC7" } %>
+            </li>
+          </ul>
+          <div class="d-flex justify-content-center mt-3 gap-2">
+            <%= f.button :submit, "Save changes", class: "button" %>
+            <%= link_to "Cancel", my_pets_path, class: "button" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div style="width: 600px; height: 600px;" class="rounded-4 overflow-hidden"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json if defined?(@markers) && @markers.present? %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>

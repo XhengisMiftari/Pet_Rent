@@ -9,4 +9,8 @@ class Pet < ApplicationRecord
   reservation.present?
   end
 
+  def my_pets
+  @pets = current_user.pets
+  end
+
 end

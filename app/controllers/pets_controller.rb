@@ -1,11 +1,29 @@
 class PetsController < ApplicationController
+
+  before_action :set_pet, only: [:show, :edit, :update]
+  before_action :authorize_pet_owner, only: [:edit, :update]
+
   def index
     @pets = Pet.all
   end
 
+  def my_pets
+  @pets = current_user.pets
+  end
+
   def show
-    @pet = Pet.find(params[:id])
     @markers = [{lat: @pet.latitude, lng: @pet.longitude, info_window_html: render_to_string(partial: "info_window", locals: { pet: @pet })}] if @pet.geocoded?
+  end
+
+  def edit
+  end
+
+  def update
+    if @pet.update(pet_params)
+      redirect_to pet_path(@pet), notice: "Pet updated!"
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def new
@@ -27,5 +45,15 @@ private
 
   def pet_params
     params.require(:pet).permit(:species, :name, :price, :location, :availability, :photo)
+  end
+
+  def set_pet
+  @pet = Pet.find(params[:id])
+  end
+
+  def authorize_pet_owner
+    unless @pet.user == current_user
+      redirect_to pets_path, alert: "You can only edit your own pets"
+    end
   end
 end
