@@ -11,6 +11,7 @@
 @import "components/index";
 @import "pages/index";
 @import "components/footer";
+@import "components/cards"; // if you put it in _cards.scss
 
 @import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
 
@@ -52,4 +53,37 @@ h1 {
   border: 1px solid lightgrey;
   box-shadow: none;
   background-color: transparent;
+}
+
+.map-responsive {
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  max-height: 600px;
+  min-height: 120px;
+}
+
+
+@media (min-width: 576px) {
+  .map-responsive {
+    height: 300px;
+  }
+}
+
+@media (min-width: 992px) {
+  .map-responsive {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+.text-danger{
+  color: #eb5e48be !important;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000;
+  font-size: 1.2em;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-transform: uppercase;
 }
