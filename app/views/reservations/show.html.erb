@@ -1,11 +1,12 @@
 <div class= "container d-flex justify-content-center" style="min-height: 100vh; padding-top: 100px;">
   <div class="card show-card" style="max-width: 400px; margin-left: 2rem;">
-    <div class="card-header text-center bg-primary text-white">
+    <div class="card-header text-center bg-primary text-white animate__animated animate__pulse">
       <h2>Hi <%= @reservation.user.first_name %></h2>
       <small class="text-light">Thank you for renting me! 😍</small>
     </div>
 
     <div>
+
       <ul class="list-group list-group-flush">
         <li class="list-group-item"><strong>Pet: </strong><%= @reservation.pet.name %></li>
         <li class="list-group-item"><strong>Price: </strong>$<%= @reservation.pet.price %></li>

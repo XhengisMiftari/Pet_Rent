@@ -1,14 +1,18 @@
-<div class="container d-flex justify-content-center align-items-start gap-4" style="min-height: 100vh;">
-  <div>
-    <div class="card pet-card">
+<div class="container d-flex flex-column flex-lg-row justify-content-center align-items-start gap-4" style="min-height: 100vh;">  <div>
+    <div class="card pet-card animate__animated animate__pulse">
       <div class="card-header text-center bg-primary text-white">
         <h2><%= @pet.name %></h2>
         <small class="text-light">Rent me please ☺</small>
       </div>
       <div class="card-body card-body-show text-center">
-        <ul class="list-group list-group-flush mb-3">
+      <% if @pet.photo.attached? %>
+        <div class="text-center mt-3">
+          <%= image_tag url_for(@pet.photo), class: "rounded-circle", alt: @pet.name, style: "width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" %>
+        </div>
+      <% end %>
+        <ul class="list-group list-group-flush mb-3 text-start">
           <li class="list-group-item"><strong>Name: </strong><%= @pet.name %></li>
-          <li class="list-group-item"><strong>Species: </strong><%= @pet.species %></li>
+          <li class="list-group-item"><strong>Specie: </strong><%= @pet.species %></li>
           <li class="list-group-item"><strong>Price: </strong>$<%= @pet.price %></li>
           <li class="list-group-item"><strong>Location: </strong><%= @pet.location %></li>
           <li class="list-group-item"><strong>Status: </strong><%= @pet.availability ? "Available" : "Not Available" %></li>

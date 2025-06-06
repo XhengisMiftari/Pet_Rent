@@ -20,14 +20,34 @@
 .social-icons {
   display: flex;
   gap: 10px;
-  margin-top: 5px;
+  margin-top: 2px;
 }
+
+.social-icons a {
+  position: relative;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+.social-icons a .icon,
+.social-icons a i,
+.social-icons a svg {
+  transition: color 0.3s, transform 0.5s;
+}
+
+.social-icons a:hover .icon,
+.social-icons a:hover i,
+.social-icons a:hover svg {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
 
 .footer-links a {
   color: rgb(28, 90, 32);
   opacity: 0.4;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 30px;
   transition: opacity 0.3s ease;
 }
 
