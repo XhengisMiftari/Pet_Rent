@@ -5,6 +5,11 @@
         <small class="text-light">Rent me please ☺</small>
       </div>
       <div class="card-body card-body-show text-center">
+      <% if @pet.photo.attached? %>
+        <div class="text-center mt-3">
+          <%= image_tag url_for(@pet.photo), class: "rounded-circle", alt: @pet.name, style: "width: 120px; height: 120px; object-fit: cover; border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" %>
+        </div>
+      <% end %>
         <ul class="list-group list-group-flush mb-3 text-start">
           <li class="list-group-item"><strong>Name: </strong><%= @pet.name %></li>
           <li class="list-group-item"><strong>Species: </strong><%= @pet.species %></li>
