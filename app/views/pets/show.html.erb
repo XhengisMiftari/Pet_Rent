@@ -10,7 +10,9 @@
           <li class="list-group-item"><strong>Specie: </strong><%= @pet.species %></li>
           <li class="list-group-item"><strong>Price: </strong>$<%= @pet.price %></li>
           <li class="list-group-item"><strong>Location: </strong><%= @pet.location %></li>
-          <li class="list-group-item"><strong>Status: </strong><%= @pet.availability ? "Available" : "Not Available" %></li>
+          <h5 class="mb-0 <%= @pet.availability ? 'text-success' : 'text-danger' %>">
+          <%= @pet.availability ? "Available" : "Not Available" %>
+          </h5>
         </ul>
       </div>
     </div>
@@ -23,8 +25,6 @@
           animal_sounds_sound_value: asset_path("#{@pet.species.downcase}.mp3"),
           action: "click->animal-sounds#play"
         } %>
-      <% else %>
-        <span class="text-danger fw-bold">Already reserved!</span>
       <% end %>
       <%= link_to "Back", pets_path, class: "button" %>
     </div>
