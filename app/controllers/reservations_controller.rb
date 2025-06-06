@@ -2,6 +2,16 @@ class ReservationsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_pet, only: [:new, :create, :show, :destroy]
   before_action :ensure_pet_available, only: [:new, :create]
+  def invoice
+    @reservation = Reservation.find(params[:id])
+    respond_to do |format|
+    format.pdf do
+      render pdf: "invoice_#{@reservation.id}",
+             template: "reservations/invoice",
+             layout: false
+    end
+  end
+end
   def show
     @reservation = Reservation.find(params[:id])
   end
