@@ -21,6 +21,7 @@ def create
   @reservation.user = current_user
 
     if @reservation.save
+      @pet.update(availability: false)
       redirect_to pet_reservation_path(@pet, @reservation), notice: "Rented your buddy!"
     else
       render :new, status: :unprocessable_entity
