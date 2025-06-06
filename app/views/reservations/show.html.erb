@@ -14,6 +14,7 @@
         <li class="list-group-item"><strong>Until: </strong><%= @reservation.end_date.strftime("%-d. %B %Y") %></li>
       </ul>
     </div>
+    <%= link_to "Download Invoice (PDF)", invoice_pet_reservation_path(@reservation.pet, @reservation, format: :pdf), class: "btn btn-success mt-3" %>
     <%= link_to "Remove Reservation", pet_reservation_path(@reservation.pet, @reservation), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "button" %>
     <%= link_to "Reservations", reservations_path, class: "button mt-2" %>
   </div>
