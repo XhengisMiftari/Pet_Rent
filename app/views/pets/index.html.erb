@@ -1,6 +1,17 @@
 <div class="container my-4">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: pets_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
   <h1>All Pets</h1>
     <div class="row g-4">
+     <% if @pets.any? %>
       <% @pets.each do |t| %>
         <div class="col-md-4">
           <%= link_to pet_path(t), class: "text-decoration-none" do %>
@@ -16,6 +27,9 @@
             </div>
           <% end %>
         </div>
+      <% end %>
+      <% else %>
+      <em>Sorry, no pets found</em>
       <% end %>
 
     </div>
