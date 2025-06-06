@@ -11,7 +11,7 @@
   </div>
   <h1>All Pets</h1>
     <div class="row g-4 scroll-list__wrp" >
-     <% if @pets.any? %>
+    <% if @pets.any? %>
       <% @pets.each do |t| %>
         <div class="col-md-4 ">
           <%= link_to pet_path(t), class: "text-decoration-none" do %>

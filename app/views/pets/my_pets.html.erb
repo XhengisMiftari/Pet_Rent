@@ -1,8 +1,8 @@
 <div class="container">
-  <h1 class="my-4">My Pet listings</h1>
+  <h1 class="my-4">My Pet listings</h2>
 
   <% if @pets.any? %>
-    <div class="row">
+    <div class="row g-4 scroll-list__wrp">
       <% @pets.each do |pet| %>
         <div class="col-md-4 mb-4">
           <div class="card pet-card-zoom h-100" style="border-radius: 10px; overflow: hidden; background-image: url('<%= pet.photo.attached? ? url_for(pet.photo) : asset_path("placeholder.png") %>'); background-size: cover; background-position: center; min-height: 300px;">
