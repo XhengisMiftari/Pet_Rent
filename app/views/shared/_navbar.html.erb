@@ -20,6 +20,11 @@
           <li class="nav-item">
             <%= link_to "Reservations", reservations_path, class: "nav-link" %>
           </li>
+          <li class="nav-item">
+            <% if user_signed_in? %>
+              <%= link_to 'My Pet Listings', my_pets_path, class: "nav-link" %>
+            <% end %>
+          </li>
           <li class="nav-item dropdown">
               <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <% if user_signed_in? && current_user.avatar.attached? %>
