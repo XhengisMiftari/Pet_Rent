@@ -46,13 +46,15 @@
       </ul>
       <%# button click me for the video %>
       <div class="position-absolute start-50 translate-middle-x">
-      <button
-        data-controller="video-popup"
-        data-video-popup-video-value="<%= asset_path('myvideo.mp4') %>"
-        data-action="click->video-popup#play"
-        class="btn btn-success"
-      >
-        Click Me</button>
+        <button
+            data-controller="video-popup"
+            data-video-popup-video-value="<%= asset_path('myvideo.mp4') %>"
+            data-action="click->video-popup#play"
+            class="btn btn-success"
+            style="background-color: #AEC8A4; color: #3B3B1A; border-radius: 10px; border: 1px solid #E7EFC7;"
+          >
+          <i class="fa fa-dog"></i> Click Me
+          </button>
       </div>
     </div>
 

@@ -1,13 +1,13 @@
 <div class="container my-4">
   <div class="col-sm-8 my-3">
-    <%= form_with url: pets_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-            params[:query],
-            class: "form-control",
-            placeholder: "Type a keyword"
-        %>
-      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-    <% end %>
+    <%= form_with url: pets_path, method: :get, class: "d-flex gap-2 mb-4" do %>
+  <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Type a keyword",
+        style: "background-color: #E7EFC7; color: #3B3B1A; border-radius: 10px; border: 1px solid #AEC8A4;" %>
+  <%= submit_tag "Search", name: "", class: "btn", style: "background-color: #AEC8A4; color: #3B3B1A; border-radius: 10px; border: 1px solid #E7EFC7;" %>
+<% end %>
   </div>
   <h1>All Pets</h1>
     <div class="row g-4 scroll-list__wrp" >

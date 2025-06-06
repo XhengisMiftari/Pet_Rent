@@ -1,5 +1,5 @@
 <div class="container d-flex flex-column flex-lg-row justify-content-center align-items-start gap-4" style="min-height: 100vh;">  <div>
-    <div class="card pet-card animate__animated animate__pulse">
+    <div class="card pet-card animate__animated animate__pulse h-100">
       <div class="card-header text-center bg-primary text-white">
         <h2><%= @pet.name %></h2>
         <small class="text-light">Rent me please ☺</small>
@@ -15,9 +15,14 @@
           <li class="list-group-item"><strong>Species: </strong><%= @pet.species %></li>
           <li class="list-group-item"><strong>Price: </strong>$<%= @pet.price %></li>
           <li class="list-group-item"><strong>Location: </strong><%= @pet.location %></li>
-          <li class="list-group-item"><strong>Status: </strong><%= @pet.availability ? "Available" : "Not Available" %></li>
+          <h5 class="mb-0 <%= @pet.availability ? 'text-success' : 'text-danger' %>">
+          <%= @pet.availability ? "Available" : "Not Available" %>
+          </h5>
         </ul>
-        <% if !@pet.reserved? %>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-3" style="width: 100%;">
+      <% if @pet.availability? %>
       <%= link_to "Reserve", new_pet_reservation_path(@pet),
         class: "button mb-8 rounded-3 justify-content-center align-items-center",
         data: {
@@ -25,8 +30,6 @@
           animal_sounds_sound_value: asset_path("#{@pet.species.downcase}.mp3"),
           action: "click->animal-sounds#play"
         } %>
-      <% else %>
-        <span class="text-danger fw-bold">Already reserved!</span>
       <% end %>
       </div>
     </div>
