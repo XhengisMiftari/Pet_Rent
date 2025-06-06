@@ -9,7 +9,7 @@
   <%= submit_tag "Search", name: "", class: "btn", style: "background-color: #AEC8A4; color: #3B3B1A; border-radius: 10px; border: 1px solid #E7EFC7;" %>
 <% end %>
   </div>
-  <h1>All Pets</h1>
+  <h1 class="mb-4">All Pets</h1>
     <div class="row g-4 scroll-list__wrp" >
     <% if @pets.any? %>
       <% @pets.each do |t| %>
